@@ -5,7 +5,7 @@ services:
  - docker
 
 before_install:
- - docker build -t ragpark/docker-react -f Dockerfile.dev .
+ - docker build -t ragpark/docker-react-app -f Dockerfile.dev .
 
 script:
- - docker run -e CI=true ragpark/docker-react npm run test
+ - docker run -e CI=true ragpark/docker-react-app npm run test
