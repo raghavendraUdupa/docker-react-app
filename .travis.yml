@@ -9,3 +9,17 @@ before_install:
 
 script:
   - docker run -e CI=true ragpark/docker-react-app npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react-app"
+  env: "Dockerreactapp-env"
+  bucket_name: "elasticbeanstalk-us-east-2-533483506083"
+  bucket_path: "docker-react-app"
+  on:
+    branch: master
+    
+
+
+
